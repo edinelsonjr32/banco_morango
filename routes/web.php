@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\PagamentoController;
 use App\Http\Controllers\PainelController;
+use App\Http\Controllers\SaqueController;
+use App\Http\Controllers\TransferenciaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +31,25 @@ Route::get(
     '/painel',
     [PainelController::class, 'index']
 )->name('painel.index');
+
+Route::get(
+    '/pagamentos/create',
+    [PagamentoController::class, 'create']
+)->name('pagamentos.create');
+
+Route::get(
+    '/saques/create',
+    [SaqueController::class, 'create']
+)->name('saques.create');
+
+
+Route::get(
+    '/transferencias/create',
+    [TransferenciaController::class, 'create']
+)->name('transferencia.create');
+
+
+Route::get(
+    '/depositos/create',
+    [DepositoController::class, 'create']
+)->name('despositos.create');
