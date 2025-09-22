@@ -5,10 +5,11 @@
 
 @section('actions')
 {{-- Trocar href="#" por route('...') depois --}}
-<a href="#" class="btn btn-success btn-sm">Depositar</a>
-<a href="#" class="btn btn-primary btn-sm">Transferir</a>
-<a href="#" class="btn btn-warning btn-sm">Pagar Conta</a>
-<a href="#" class="btn btn-danger btn-sm">Sacar</a>
+<a href="{{route('conta.create')}}" class="btn btn-primary btn-sm">Criar Conta</a>
+<a href="{{route('despositos.create')}}" class="btn btn-success btn-sm">Depositar</a>
+<a href="{{route('transferencia.create')}}" class="btn btn-primary btn-sm">Transferir</a>
+<a href="{{route('pagamentos.create')}}" class="btn btn-warning btn-sm">Pagar Conta</a>
+<a href="{{route('saques.create')}}" class="btn btn-danger btn-sm">Sacar</a>
 @endsection
 
 @section('alerts')

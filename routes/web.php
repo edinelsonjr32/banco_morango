@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContaController;
 use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\PagamentoController;
 use App\Http\Controllers\PainelController;
@@ -22,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/conta/create', [
+    ContaController::class, 
+    'create'
+])->name('conta.create');
 
 Auth::routes();
 
