@@ -38,26 +38,26 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get(
     '/painel',
     [PainelController::class, 'index']
-)->name('painel.index');
+)->name('painel.index')->middleware('auth');
 
 Route::get(
     '/pagamentos/create',
     [PagamentoController::class, 'create']
-)->name('pagamentos.create');
+)->name('pagamentos.create')->middleware('auth');
 
 Route::get(
     '/saques/create',
     [SaqueController::class, 'create']
-)->name('saques.create');
+)->name('saques.create')->middleware('auth');
 
 
 Route::get(
     '/transferencias/create',
     [TransferenciaController::class, 'create']
-)->name('transferencia.create');
+)->name('transferencia.create')->middleware('auth');
 
 
 Route::get(
     '/depositos/create',
     [DepositoController::class, 'create']
-)->name('despositos.create');
+)->name('despositos.create')->middleware('auth');

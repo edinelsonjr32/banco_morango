@@ -20,10 +20,13 @@
 @section('page')
 {{-- CARTÃO: INFORMAÇÕES DA CONTA (trocar por dados reais depois) --}}
 <div class="card mb-3">
-    <div class="card-body">
-        <p class="mb-1"><strong>Agência/Conta:</strong> 0001-123456-7</p>
-        <p class="mb-0"><strong>Saldo:</strong> R$ 0,00</p>
-    </div>
+    @foreach ($contas as $conta)
+        <div class="card-body">
+            <p class="mb-1"><strong>Agência/Conta:</strong> {{$conta->agencia}} / {{$conta->conta}}</p>
+            <p class="mb-0"><strong>Saldo:</strong> R$ {{$conta->saldo}}</p>
+        </div>
+    @endforeach
+
 </div>
 
 {{-- TABELA: EXTRATO (substituir linhas estáticas por loop Blade depois) --}}
